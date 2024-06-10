@@ -1,32 +1,38 @@
 let home = 0
 let away = 0
 
-function home1() {
-    home++
-    updateLabels();
-}
-
-function away1() {
-    away++
-    updateLabels();
-}
-
-function home3() {
-    home += 3
-    updateLabels();
-}
-
-function away3() {
-    away += 3
-    updateLabels();
+function score(isHome, amount) {
+    if (isHome) {
+        home += amount
+        if (home < 0) {
+            home = 0
+        }
+    }
+    else {
+        away += amount
+        if (away < 0) {
+            away = 0
+        }
+    }
+    updateLabels()
 }
 
 function updateLabels() {
 
     const homeScoreElement = document.getElementById("home-score")
-    homeScoreElement.innerText = String(home)
+    let padHome = String(home).padStart(2, '0');
+    homeScoreElement.innerText = String(padHome)
     const awayScoreElement = document.getElementById("away-score")
-    awayScoreElement.innerText = String(away)
+    let padAway = String(away).padStart(2, '0');
+    awayScoreElement.innerText = String(padAway)
+    if (home >= 21) {
+        alert("Home team wins!")
+        reset()
+    }
+    else if (away >= 21) {
+        alert("Away team wins!")
+        reset()
+    }
 }
 
 function reset() {
