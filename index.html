@@ -13,10 +13,12 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-12"></div>
+            <div class="col-12">
+                <button onclick="reset()" class="btn btn-danger"> Reset </button>
+            </div>
         </div>
-
     </div>
+
     <div class="container">
         <div class="row">
             <div class="col-4">
@@ -33,16 +35,17 @@
     <div class="container">
         <div class="row">
             <div class="col-4">
-                <button onclick="home1" class="btn">HOME+1</button>
-                <button onclick="away1" class="btn">AWAY+1</button>
+                <button onclick="home1()" class="btn">HOME+1</button>
+                <button onclick="away1()" class="btn">AWAY+1</button>
             </div>
             <div class="col-4">
-                <button onclick="home3" class="btn">HOME+3</button>
-                <button onclick="away3" class="btn">AWAY+3</button>
+                <button onclick="home3()" class="btn">HOME+3</button>
+                <button onclick="away3()" class="btn">AWAY+3</button>
             </div>
         </div>
+    </div>
 
-        <script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
